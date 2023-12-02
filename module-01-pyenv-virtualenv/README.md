@@ -1,5 +1,5 @@
-# pyenv
-Managing multiple python versions with pyenv
+# pyenv virtualenv
+Managing virtual python environment with pyenv
 
 ## install
 
@@ -21,25 +21,29 @@ Install exact version (3.8.18) and use it
 ```bash
 mkdir -p path/to/python/module
 cd path/to/python/module
-pyenv install 3.8.18
+pyenv install 3.8.17
 ```
 
-Use python 3.8.18 locally
+Create virtual environment (with python 3.8.17) for `module-01-pyenv-virtualenv` project 
 
 ```bash
-pyenv local 3.8.18
+pyenv virtualenv 3.8.17 module-01-pyenv-virtualenv
+```
+
+Use virtual environment like so:
+
+```bash
+pyenv local module-01-pyenv-virtualenv
 ```
 
 Verify:
 
 ```bash
 python -V
-#Python 3.8.18
+#Python 3.8.17
 pyenv which python
-#~/.pyenv/versions/3.8.18/bin/python
+#~/.pyenv/versions/module-01-pyenv-virtualenv/bin/python
 ```
-
-![](./pyenv-pyramid.webp)
 
 ## rtfm
 https://realpython.com/intro-to-pyenv/
