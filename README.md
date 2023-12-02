@@ -1,4 +1,4 @@
-# python
+# python [![CI](https://github.com/daggerok/python/actions/workflows/ci.yml/badge.svg)](https://github.com/daggerok/python/actions/workflows/ci.yml)
 Python
 
 ## Boris
