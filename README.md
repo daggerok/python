@@ -29,3 +29,12 @@ misc:
 
 aws:
 * jobs: Glue pyshell + GLue Triggers + Cloudformation
+
+## Serdak
+
+python:
+* pandas
+* sql alchemy
+
+angular
+azure
