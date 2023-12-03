@@ -1,4 +1,4 @@
-# python main
+# python input
 
 Create file `__main__.py` with next content:
 
