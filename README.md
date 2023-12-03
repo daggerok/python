@@ -38,3 +38,10 @@ python:
 
 angular
 azure
+
+## getting started
+
+```bash
+python -m venv .venv
+bash .venv/bin/activate
+```
