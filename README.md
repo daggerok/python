@@ -45,3 +45,21 @@ azure
 python -m venv .venv
 bash .venv/bin/activate
 ```
+
+## requirements file
+
+Generate `requirements.txt` file:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Install packages specified in `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+## rtfm
+* https://learnpython.com/blog/python-requirements-file/
+* https://realpython.com/intro-to-pyenv/
