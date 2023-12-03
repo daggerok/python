@@ -4,11 +4,11 @@ Python
 ## Boris
 
 dev:
-* pytest
-* pylint
-* behave
-* pyenv
-* pip3
+* pytest ✔
+* pylint ✔
+* behave ✔
+* pyenv ✔
+* pip3 ✔
 * makefile
 
 web/crud api:
@@ -60,7 +60,14 @@ Install packages specified in `requirements.txt` file:
 pip install -r requirements.txt
 ```
 
+## cleanup
+
+```bash
+for i in `find . -name '*.pytest_cache' -type d` ; do rm -rfv $i ; done
+```
+
 ## rtfm
+* https://behave.readthedocs.io/en/latest/
 * https://docs.pytest.org/en/7.4.x/getting-started.html
 * https://learnpython.com/blog/python-requirements-file/
 * https://realpython.com/intro-to-pyenv/

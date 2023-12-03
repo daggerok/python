@@ -1,8 +1,5 @@
-# pytest
+# pylint
 
 ```bash
-python -m pylint --generate-rcfile
+python -m pylint src
 ```
-
-## rtfm
-https://docs.pytest.org/en/7.4.x/getting-started.html
