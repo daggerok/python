@@ -45,5 +45,24 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-          # cache: 'pip' # caching pip dependencies
       - run: echo 'Max' | python module-03-user-cli-input/src
+  module-04-pytest:
+    if: github.event.inputs.trigger == ''
+      || !startsWith(github.event.inputs.trigger, 'm')
+      || !startsWith(github.event.inputs.trigger, 'M')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            ./.p
+            ./.docker
+            !~/.m2/repository/io/github/daggerok
+          key: ${{ runner.os }}-${{ hashFiles('**/module-02-main/*.py') }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - run: cd module-04-pytest && pip install -r requirements-dev.txt && python -m pytest

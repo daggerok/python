@@ -61,5 +61,6 @@ pip install -r requirements.txt
 ```
 
 ## rtfm
+* https://docs.pytest.org/en/7.4.x/getting-started.html
 * https://learnpython.com/blog/python-requirements-file/
 * https://realpython.com/intro-to-pyenv/
