@@ -104,3 +104,38 @@ jobs:
           cache: 'pip'
       - run: cd $GITHUB_WORKSPACE/module-06-behave && pip install -r requirements-dev.txt
       - run: cd $GITHUB_WORKSPACE/module-06-behave && python -m behave
+  module-07-prime-numbers:
+    if: github.event.inputs.trigger == ''
+      || !startsWith(github.event.inputs.trigger, 'm')
+      || !startsWith(github.event.inputs.trigger, 'M')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            ./.p*
+            !~/.m2/repository/io/github/daggerok
+          key: ${{ runner.os }}-${{ hashFiles('**/module-02-main/*.py') }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - run: |
+          cd $GITHUB_WORKSPACE/module-07-prime-numbers
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt -r requirements-dev.txt
+      - run: |
+          cd $GITHUB_WORKSPACE/module-07-prime-numbers
+          source .venv/bin/activate
+          PYTHONPATH=./src pylint ./src ./tests
+          PYTHONPATH=./src pycodestyle ./src ./tests
+          PYTHONPATH=./src pytest ./tests
+          deactivate
+      - run: |
+          cd $GITHUB_WORKSPACE/module-07-prime-numbers
+          source .venv/bin/activate
+          python ./src
+          deactivate
