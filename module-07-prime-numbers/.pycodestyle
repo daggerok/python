@@ -1,0 +1,6 @@
+[FORMAT]
+max-line-length=120
+ignore=tests/**/test_*.py
+
+[INDENT]
+indent-size=4

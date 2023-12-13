@@ -9,6 +9,8 @@ dev:
 * behave ✔
 * pyenv ✔
 * pip3 ✔
+* pep8 ✔
+* pycodestyle ✔
 * makefile
 
 web/crud api:
@@ -43,7 +45,10 @@ azure
 
 ```bash
 python -m venv .venv
-bash .venv/bin/activate
+source .venv/bin/activate
+pip install ...
+# ...
+deactivate
 ```
 
 ## requirements file
@@ -54,10 +59,10 @@ Generate `requirements.txt` file:
 pip freeze > requirements.txt
 ```
 
-Install packages specified in `requirements.txt` file:
+Install packages specified in `requirements.txt` and in `requirements-dev.txt` files:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt -r requirements-dev.txt
 ```
 
 ## cleanup
